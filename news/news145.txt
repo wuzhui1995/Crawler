@@ -1,0 +1,685 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>吉林大学电子校务平台</title>
+<link type="text/css" rel="stylesheet" href="css/main.css" />
+
+
+
+
+
+
+
+
+   
+<script type="text/javascript">
+	var whirRootPath = "/defaultroot";
+	var preUrl = "/defaultroot"; 
+	var whir_browser = "chrome"; 
+	var whir_agent = "Mozilla/5.0 (Windows; U; Windows NT 5.2) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.2.149.27 Safari/525.13"; 
+	var whir_locale = "zh_cn";  
+</script>
+<script src="/defaultroot/scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
+<script src="/defaultroot/scripts/i18n/zh_CN/CommonResource.js" type="text/javascript"></script>
+<script src="/defaultroot/scripts/plugins/lhgdialog/lhgdialog.js?skin=idialog" type="text/javascript"></script>
+
+<script src="/defaultroot/scripts/plugins/form/jquery.form.js" type="text/javascript"></script>
+<script src="/defaultroot/scripts/main/whir.validation.js" type="text/javascript"></script>
+<script src="/defaultroot/scripts/main/whir.application.js" type="text/javascript"></script>
+<script src="/defaultroot/scripts/main/whir.util.js" type="text/javascript"></script>
+	
+<script src="/defaultroot/scripts/plugins/My97DatePicker/WdatePicker.js"></script>
+
+	
+<script src="/defaultroot/scripts/plugins/powerFloat/jquery-powerFloat.js" type="text/javascript"></script>
+
+	
+<script src="/defaultroot/scripts/plugins/easyui/1.3.2/jquery.easyui.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+/********公共初始化操作**********************/
+$(document).ready(function(){	
+    setInputStyle();
+    digitCheck();
+    $("input[type='hidden'],select").each(function(){
+        $(this).attr("defaultValue",$(this).val());
+    });
+    try{$(document.body).focus();}catch(e){}
+});
+</script>
+
+<script src="/defaultroot/scripts/plugins/jPages/js/jPages.js" type="text/javascript"></script>
+<link   href="/defaultroot/scripts/plugins/jPages/css/jPages.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/main.js"></script>
+
+
+<script type="text/javascript" src="scripts/util/cookie.js"></script>
+<script type="text/javascript" src="scripts/plugins/security/security.js"></script>
+
+<script language="javascript" type="text/javascript">
+var channelName = '校园快讯';
+
+</script>
+<style>
+.title02{
+	height: 50px;
+	line-height: 50px;
+	background-image: url(../images/title01.jpg);
+	background-position: left center;
+	background-repeat: no-repeat;
+	margin-left: 10px;
+	padding-left: 10px;
+	font-size: 14px;
+	color: #2E5C87;
+}
+.font14{font-size:14px;}
+.red{color:#ff0000;}
+ .inputText3 {
+    width: 98%;
+    border: 1px solid #dedee7;
+    line-height: 27px;
+    height: 27px;
+    padding: 0px;
+    color: #555;
+    vertical-align: middle;
+    margin: 0;
+    font-size: 12px;
+    resize: none;
+    *width:97%: ;
+    _width: 97%;
+    border-radius: 5px;
+}
+.btnButton4font4 {
+    cursor: pointer;
+    background: url(images/inbtnbg.jpg) repeat-x left bottom #f2f2f2;
+    color: #333;
+    font-size: 12px;
+    border: 1px solid #afafaf;
+    height: 24px;
+    padding: 0px 10px 0px 10px;
+    *+padding: 0px 3px 0px 3px: ;
+    outline: none;
+}
+
+</style>
+</head>
+
+<body style="overflow-x:hidden">
+<!-- 头部start -->
+<div class="top">
+<div class="box clear">
+	<div class="logo"><a href="login.jsp" title="吉林大学"><img src="images/logo.png" /></a></div>
+    <div class="link_r">
+    
+    	
+    	<!-- <p>今天是 <span id="time"></span></p> -->
+    	  <!-- <p><a href="/defaultroot/teachTime!getTeachTime.action">今天是 <span>2017年06月18日 星期日 第16周</span></a></p> -->
+    	<!-- <p><a href="/servlet/TeachTimeServlet">今天是 <span>2017年06月18日 星期日 第16周</span></a></p> -->
+    	<p><a href="http://jwc.jlu.edu.cn/jxrl.htm" target="_Blank">今天是 <span>2017年06月18日 星期日 第16周</span></a></p>
+        <ul class="menu clear">
+        	<li><a href="/login.jsp">首页</a></li>
+            <li onmouseover="showGrbgA();" onmouseout="hideGRbgA();">
+            	<a href="#">个人办公</a>
+            	<div onmouseover="showGrbgA();" onmouseout="hideGRbgA();" style="">
+					<a id="grbgA" style="background:blue; color: #FFF;font-size: 14px; text-align: center;display:none;" class="menuOne" href="#" onclick="window.open('help/h1311.html');" >操作说明</a>
+					<script>
+						function showGrbgA(){
+							$("#grbgA").show();
+						}
+						function hideGRbgA(d){
+							$("#grbgA").hide();//gulh20151114
+						////setTimeout(function(){
+							////$("#grbgA").css("display","none");},1000);
+						}
+					</script>
+			  	</div>
+            </li>
+            <li onmouseover="showgwglA();" onmouseout="hidegwglA();"><a href="#">公文管理</a>
+            	<a id="gwglA" class="menuOne" style="background:blue;padding: 0px 16px;color: #FFF;font-size: 14px;display: none;word-break: keep-all;white-space: nowrap;min-width: 44px;width: auto !important;text-align: center;"
+			  	href="#" onclick="window.open('help/h83.html');"><span>操作说明</span></a>
+            	<script>
+			  		function showgwglA(){
+			  			$("#gwglA").css("display","block");
+				  	}
+				  	function hidegwglA(){
+					    $("#gwglA").hide();//gulh20151114
+				  	////setTimeout(function(){
+				  		////$("#gwglA").css("display","none");},1000);
+				  	}
+			  	</script>
+            
+            </li>
+            <li onmouseover="showgzlcA();" onmouseout="hidegzlcA();"><a href="#">工作流程</a>
+            	<a id="gzlcA" class="menuOne" style="background:blue;padding: 0px 16px;color: #FFF;font-size: 14px;display: none;word-break: keep-all;white-space: nowrap;min-width: 44px;width: auto !important;text-align: center;"
+			  	href="#" onclick="window.open('help/h61.html');" onmouseover="showgzlcA();" onmouseout="hidegzlcA();"><span>操作说明</span></a>
+           		<script>
+			  		function showgzlcA(){
+			  			$("#gzlcA").css("display","block");
+				  	}
+				  	function hidegzlcA(){
+					    $("#gzlcA").hide();//gulh20151114
+				  	////setTimeout(function(){
+				  		////$("#gzlcA").css("display","none");},1000);
+				  	}
+			  	</script>
+            
+            </li>
+            <li onmouseover="showzhbgA();" onmouseout="hidezhbgA();"><a href="#">综合办公</a>
+            	<a id="zhbgA" class="menuOne" style="background:blue;padding: 0px 16px;color: #FFF;font-size: 14px;display: none;word-break: keep-all;white-space: nowrap;min-width: 44px;width: auto !important;text-align: center;"
+			  	href="#" onclick="window.open('help/h142.html');"  onmouseover="showzhbgA();" onmouseout="hidezhbgA();"><span>操作说明</span></a>
+            	<script>
+			  		function showzhbgA(){
+			  			$("#zhbgA").css("display","block");
+				  	}
+				  	function hidezhbgA(){
+					    $("#zhbgA").hide();//gulh20151114
+				  	////setTimeout(function(){
+				  		////$("#zhbgA").css("display","none");},1000);
+				  	}
+			  	</script>
+            
+            </li>
+            <li onmouseover="showxxglA();" onmouseout="hidexxglA();"><a href="#">信息管理</a>
+            	<a id="xxglA" class="menuOne" style="background:blue;padding: 0px 16px;color: #FFF;font-size: 14px;display: none;word-break: keep-all;white-space: nowrap;min-width: 44px;width: auto !important;text-align: center;"
+			  	href="#" onclick="window.open('help/h32.html');" onmouseover="showxxglA();" onmouseout="hidexxglA();"><span>操作说明</span></a>
+            	<script>
+			  		function showxxglA(){
+			  			$("#xxglA").css("display","block");
+				  	}
+				  	function hidexxglA(){
+					    $("#xxglA").hide();//gulh20151114
+				  	////setTimeout(function(){
+				  		////$("#xxglA").css("display","none");},1000);
+				  	}
+			  	</script>
+            </li>
+            <li onmouseover="showxwjlA();" onmouseout="hidexwjlA();"><a href="#">校务交流</a>
+            	<a id="xwjlA" class="menuOne" style="background:blue;padding: 0px 16px;color: #FFF;font-size: 14px;display: none;word-break: keep-all;white-space: nowrap;min-width: 44px;width: auto !important;text-align: center;"
+			  	href="#" onclick="window.open('help/h122.html');"><span>操作说明</span></a>
+            	<script>
+			  		function showxwjlA(){
+			  			$("#xwjlA").css("display","block");
+				  	}
+				  	function hidexwjlA(){
+					    $("#xwjlA").hide();//gulh20151114
+				  		////setTimeout(function(){
+				  		////$("#xwjlA").css("display","none");},1000);
+				  	}
+			  	</script>
+            </li>
+            <li onmouseover="showznxA();" onmouseout="hideznxA();"><a href="#">站内信</a>
+            	<a id="znxA" class="menuOne" style="background:blue;padding: 0px 16px;color: #FFF;font-size: 14px;display: none;word-break: keep-all;white-space: nowrap;min-width: 44px;width: auto !important;text-align: center;"
+			  	href="#" onclick="window.open('help/h102.html');" onmouseover="showznxA();" onmouseout="hideznxA();"><span>操作说明</span></a>
+            	<script>
+			  		function showznxA(){
+			  			$("#znxA").css("display","block");
+				  	}
+				  	function hideznxA(){
+					    $("#znxA").hide();//gulh20151114
+				  		////setTimeout(function(){
+				  			////$("#znxA").css("display","none");},1000);				  	
+					}
+			  	</script>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+<!-- 头部end -->
+<br>
+<form action="PortalInformation!jldxList.action" method="post" name="gjzForm2" id="gjzForm2" >
+<div class="box clear rel">
+  <div class="rel main_c clear">
+    <div id="rightIframe" class="fr m_r" style="width:1000px;">
+      <div class="sub xntz rel">
+        <div class="tz_bg rel"> 
+		  <span class="tz_new">
+			  <marquee scrollAmount=2 onmouseover="this.stop();" width=300 onmouseout="this.start();">
+				  
+			  </marquee>
+          </span>
+		  <span class="tz_tit">校园快讯</span>
+		 </div>
+        <div class="title02" style="height:35px;width:980px"> 您所在的位置><a href="login.jsp" class="">首页</a> > <a href="/defaultroot/PortalInformation!jldxList.action?channelId=179578">校园快讯</a> 
+		<!--jiangchao20161129增加查询条件-->
+		<span style="margin-left:500px;">
+	        <input id="searchnr" class="inputText3" style="width:150px;"type="text" name="searchnr" placeholder="请输入关键字"/>
+			<select name="searchlx" id="searchlx">
+				<option value="0">标题</option>
+				<option value="1">组织</option>
+				<option value="2">内容</option>
+				<option value="3">日期</option>
+			</select>
+			<input name="chaxun" onclick="searchIndex();" id="chaxun" type="button" class="btnButton4font4" value="查询"/>
+			</span>
+		</div>	
+        <div class="sub_ul">
+            <div id="itemContainer">
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=生物与农业工程学院进行春季消防疏散演练&id=2201338&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=生物农业学院">生物与农业工程学院进行春季消防疏散演练</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=生物农业学院">生物农业学院</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=北区前卫校区召开“春防”工作部署会&id=2201337&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=北区综合办">北区前卫校区召开“春防”工作部署会</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=北区综合办">北区综合办</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=“书香伴成长”——少年儿童参观吉林大学图书馆&id=2201336&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=图书馆">“书香伴成长”——少年儿童参观吉林大学图书馆</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=图书馆">图书馆</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=教育部哲学社会科学研究重大课题攻关项目“中国东北亚战略与政策研究”结项&id=2201335&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=社科处">教育部哲学社会科学研究重大课题攻关项目“中国东北亚战略与政策研究”结项</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=社科处">社科处</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=我校举办建校七十周年哲学社会科学青年学者论坛共同探讨中国医改破冰之道&id=2201334&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=社科处">我校举办建校七十周年哲学社会科学青年学者论坛共同探讨中国医改破冰之道</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=社科处">社科处</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=创新教学模式，助力专业发展——第一医院儿科系统护理平台组织“PBL教学模式”学习交流会&id=2201333&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=白求恩第一医院">创新教学模式，助力专业发展——第一医院儿科系统护理平台组织“PBL教学模式”学习交流会</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=白求恩第一医院">白求恩第一医院</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=开启拔尖学生心理成长的新方式——2014级唐敖庆班学生积极心理品质提升培养第一期&id=2201332&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=学生心理健康中心">开启拔尖学生心理成长的新方式——2014级唐敖庆班学生积极心理品质提升培养第一期</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=学生心理健康中心">学生心理健康中心</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=刘延东副总理见证吉林大学与以色列本&#8226;古里安大学签署共建我中以创新创业中心协议&id=2201331&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=经济学院">刘延东副总理见证吉林大学与以色列本&#8226;古里安大学签署共建我中以创新创业中心协议</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=经济学院">经济学院</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=东区2016年校内勤工助学岗位招聘会成功举办&id=2201330&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=东区综合办">东区2016年校内勤工助学岗位招聘会成功举办</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=东区综合办">东区综合办</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=我院牙体牙髓病科成功举办“吉林省牙体牙髓病学精细化治疗理念&显微根管治疗培训班”&id=2201329&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=白求恩口腔医院">我院牙体牙髓病科成功举办“吉林省牙体牙髓病学精细化治疗理念&显微根管治疗培训班”</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=白求恩口腔医院">白求恩口腔医院</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=出版社荣获第三届吉林省新闻出版奖&id=2201328&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=出版社">出版社荣获第三届吉林省新闻出版奖</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=出版社">出版社</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=管理学院“我与十三五规划”系列活动之创新创业实践活动答辩会成功举办&id=2201327&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=管理学院">管理学院“我与十三五规划”系列活动之创新创业实践活动答辩会成功举办</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=管理学院">管理学院</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=央广网报道我校大学生M·M学习研究会清明节扫墓活动&id=2201326&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=团委">央广网报道我校大学生M·M学习研究会清明节扫墓活动</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=团委">团委</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=我校参与第二届“服务考生走基层”系列公益服务活动----吉林站纪实&id=2201325&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=招生办公室">我校参与第二届“服务考生走基层”系列公益服务活动----吉林站纪实</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=招生办公室">招生办公室</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=第一医院眼科中心为角膜捐献者祈福&id=2201324&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=白求恩第一医院">第一医院眼科中心为角膜捐献者祈福</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=白求恩第一医院">白求恩第一医院</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=交通学院召开春季防火安全工作会议&id=2201323&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=交通学院">交通学院召开春季防火安全工作会议</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=交通学院">交通学院</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=行政学院召开2016年工作部署大会&id=2201322&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=行政学院">行政学院召开2016年工作部署大会</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=行政学院">行政学院</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=校评估专家组对机械学院各实验教学中心进行检查评估工作&id=2201321&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=机械学院">校评估专家组对机械学院各实验教学中心进行检查评估工作</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=机械学院">机械学院</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=白求恩医学部2名临床医学七年制学生将赴美攻读博士学位&id=2201320&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=白求恩医学部">白求恩医学部2名临床医学七年制学生将赴美攻读博士学位</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=白求恩医学部">白求恩医学部</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=植物科学学院召开春季防火安全工作会议&id=2201319&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=植物科学学院">植物科学学院召开春季防火安全工作会议</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=植物科学学院">植物科学学院</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-06</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=第四届上汽集团“荣威&#8226;MG杯”大学生汽车设计挑战赛启动仪式在我校举行&id=2200994&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=就业中心">第四届上汽集团“荣威&#8226;MG杯”大学生汽车设计挑战赛启动仪式在我校举行</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=就业中心">就业中心</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-05</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=台湾科技大学廖庆荣校长一行访问吉林大学&id=2200993&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=港澳台办公室">台湾科技大学廖庆荣校长一行访问吉林大学</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=港澳台办公室">港澳台办公室</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-05</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=管理学院召开春季防火工作会议&id=2201008&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=管理学院">管理学院召开春季防火工作会议</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=管理学院">管理学院</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-05</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=国家社科基金重大项目“吉林大安后套木嘎遗址的发掘与综合研究”开题论证会在吉林大学召开&id=2201007&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=社科处">国家社科基金重大项目“吉林大安后套木嘎遗址的发掘与综合研究”开题论证会在吉林大学召开</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=社科处">社科处</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-05</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=中国安华集团与吉林大学全面战略合作座谈会圆满结束&id=2201006&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=地质调查研究院">中国安华集团与吉林大学全面战略合作座谈会圆满结束</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=地质调查研究院">地质调查研究院</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-05</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=生物与农业工程学院开展“春季防火”安全专项检查&id=2201005&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=生物农业学院">生物与农业工程学院开展“春季防火”安全专项检查</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=生物农业学院">生物农业学院</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-05</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=关于吉林大学本专科学生公寓安全卫生检查情况的通报（第一期）&id=2201004&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=学生工作部">关于吉林大学本专科学生公寓安全卫生检查情况的通报（第一期）</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=学生工作部">学生工作部</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-05</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=东北亚生物演化与环境教育部重点实验室(吉林大学)2015年度“长白山学者”特聘教授招聘公告&id=2200990&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=古生物中心">东北亚生物演化与环境教育部重点实验室(吉林大学)2015年度“长白山学者”特聘教授招聘公告</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=古生物中心">古生物中心</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-05</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=生命科学学院召开党政联席工作会议&id=2201003&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=生命科学学院">生命科学学院召开党政联席工作会议</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=生命科学学院">生命科学学院</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-05</SPAN>
+					</DIV>
+			   
+			        <DIV class="li rel"><I></I>
+					   <A class="font14" href="PortalInformation!getInformation.action?title=口腔医学院牙周病科学者参加2016年牙周病学学术研讨会&id=2201002&categoryName=校园快讯&channelName=校园快讯&fromflag=login&channelId=179578&orgname=白求恩口腔医院">口腔医学院牙周病科学者参加2016年牙周病学学术研讨会</A>
+					   <A class="column" href="/defaultroot/PortalInformation!jldxList.action?channelId=179578&orgname=白求恩口腔医院">白求恩口腔医院</A>
+					   <SPAN class="time"  style='color:gray'>2016-04-05</SPAN>
+					</DIV>
+			   
+			</div>
+			<div class="pages"> 
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" class="pages">
+					<tr>
+						<td>
+
+
+
+
+
+<table width="100%" border="0" cellpadding="5" cellspacing="0" class="pagebar">  
+  <tr>
+    <td width="72%" height="30" align="left">&nbsp;&nbsp;
+
+	   <a href="?1=1&channelId=179578&startPage=1">首页</a>&nbsp;
+       <a href="?1=1&channelId=179578&startPage=144">上页</a>&nbsp;&nbsp;
+<a href='?1=1&channelId=179578&startPage=142' >142</a>&nbsp;<a href='?1=1&channelId=179578&startPage=143' >143</a>&nbsp;<a href='?1=1&channelId=179578&startPage=144' >144</a>&nbsp;<a href='?1=1&channelId=179578&startPage=145'  style='color:#ff0000;' >145</a>&nbsp;<a href='?1=1&channelId=179578&startPage=146' >146</a>&nbsp;<a href='?1=1&channelId=179578&startPage=147' >147</a>&nbsp;<a href='?1=1&channelId=179578&startPage=148' >148</a>&nbsp;    
+	   <a href="?1=1&channelId=179578&startPage=146">下页</a>&nbsp;
+       <a href="?1=1&channelId=179578&startPage=1185">尾页</a>&nbsp;
+	      
+	   <input id="go_start_pager_b" style="height:18px;width:30px;margin-right:5px;margin-top:9px; "/>
+	   <input type="button" onClick="goPager();" value=" Go " style="height:24px; width:30px; margin-top:5px;" />
+	   <input type="hidden" name="pagerURL" id="pagerURL" value="?1=1&channelId=179578" />
+	</td>
+    <td width="28%" align="right">
+	   第&nbsp;<font color="red">145</font>/1185&nbsp;页 共&nbsp;35530&nbsp;条记录&nbsp;&nbsp;
+	</td>
+  </tr>  
+</table>
+</td>
+					</tr>
+			    </table>
+			 </div>
+        </div>
+        <!-- <div class="pages"><a href="#">上一页</a><span class="on">1</span><a href="#">2</a><a href="#">3</a><a href="#">下一页</a></div>-->
+      </div>
+    </div>
+    <div class="clearfix">&nbsp;</div>
+  </div>
+  <!-- 友链start -->
+  
+<style>
+.f_li p{
+	height:15px;
+}
+</style>
+<div class="flink sub clear">
+	<div class="f_li f_img"></div>
+    <div class="f_li jx">
+    	<h3>教学工作</h3>
+
+		
+            	<p><a href="http://jwc.jlu.edu.cn/">本科生教育</a><p>
+            
+            	<p><a href="http://yjsy.jlu.edu.cn/yjsynew/">研究生教育</a><p>
+            
+            	<p><a href="http://cie.jlu.edu.cn/">留学生教育</a><p>
+            
+            	<p><a href="http://dec.jlu.edu.cn/cms/">继续教育</a><p>
+            
+            	<p><a href="http://registry.jlu.edu.cn/">注册与考试中心</a><p>
+                    
+    </div>
+    <div class="f_li ky">
+    	<h3>科研工作</h3>
+        
+            	<p><a href="http://oa2.jlu.edu.cn/kjzx.html">科研管理</a><p>
+            
+            	<p><a href="http://hssra.jlu.edu.cn/business/website/mainPageIndex.do">社科科研</a><p>
+            
+            	<p><a href="http://jdkg.jlu.edu.cn">科技产业</a><p>
+            
+    </div>
+    <div class="f_li rscw">
+    	<h3>人事财务</h3>
+        
+            	<p><a href="http://rsgl.jlu.edu.cn/">人事与师资</a><p>
+            
+            	<p><a href="http://tax.jlu.edu.cn/">财务查询 </a><p>
+            
+    </div>
+    <div class="f_li hq">
+    	<h3>后勤采购</h3>
+        
+            	<p><a href="http://cgglzx.jlu.edu.cn/">采购管理</a><p>
+            
+            	<p><a href="http://zchq.jlu.edu.cn/">资产后勤</a><p>
+            
+            	<p><a href="http://hqserver.jlu.edu.cn/">后勤服务</a><p>
+            
+    </div>
+    <div class="f_li ts">
+    	<h3>综合服务</h3>
+        
+            	<p><a href="http://ywc.jlu.edu.cn">医院管理处</a><p>
+            
+            	<p><a href="http://xyy.jlu.edu.cn">医疗服务</a><p>
+            
+            	<p><a href="http://gongkai.jlu.edu.cn">信息公开</a><p>
+            
+            	<p><a href="http://xxzb.jlu.edu.cn">信息周报</a><p>
+            
+    </div>
+    <div class="f_li wl">
+    	<h3>共享平台</h3>
+        
+            	<p><a href="http://gxwebx.jlu.edu.cn/index.aspx">仪器共享</a><p>
+            
+            	<p><a href="http://cszx.jlu.edu.cn">测试服务</a><p>
+            
+            	<p><a href="http://hpcc.jlu.edu.cn/">超算服务</a><p>
+            
+    </div>
+    <div class="f_li zcxt">
+    	<h3>支撑系统</h3>
+        
+            	<p><a href="http://lib.jlu.edu.cn/portal/index.aspx">图书馆</a><p>
+            
+            	<p><a href="http://dag.jlu.edu.cn/">档案馆</a><p>
+            
+            	<p><a href="http://museum.jlu.edu.cn/">博物馆</a><p>
+            
+            	<p><a href="http://nic.jlu.edu.cn/">网络服务</a><p>
+            
+            	<p><a href="http://xyk.jlu.edu.cn">校园卡</a><p>
+            
+            	<p><a href="https://ca.jlu.edu.cn/mail/">吉大邮箱</a><p>
+            
+    </div>
+</div>
+  <!-- 友链end -->
+  <!-- 底部start -->
+  <div class="main_b sub">
+	<div class="b_info">电子校务平台由信息工作办公室负责维护和管理</div>
+ <div class="b_bot"><a href="mailto:xxgzb@jlu.edu.cn">电子邮件xxgzb@jlu.edu.cn</a>    联系我们     
+ <a href="PortalInformation!getInformation.action?title=关于电子校务平台&id=307880&categoryName=电子校务平台应用专区&channelName=关键字数据查询&fromflag=login&display=no">关于电子校务平台</a>
+ |<a href="/defaultroot/help/index.html" target="_blank">使用帮助</a>
+ |<a href="javascript:void(0)" onclick="NoLoginTs()">页面纠错</a>
+ |<a href="javascript:void(0)" onclick="NoLoginTs()">建议与反馈</a>
+ |<a href="PortalInformation!getInformation.action?title=电子校务平台申明&id=307883&categoryName=电子校务平台应用专区&channelName=关键字数据查询&fromflag=login&display=no">声明</a>
+ |<a href="PortalInformation!getInformation.action?title=电子校务平台手机版下载安装说明&id=307868&categoryName=电子校务平台应用专区&channelName=关键字数据查询&fromflag=login&display=no">手机版</a>|
+ <a href="PortalInformation!getInformation.action?title=即时通讯工具配置说明&id=2190175&categoryName=电子校务平台应用专区&channelName=关键字数据查询&fromflag=login&display=no">即时通讯</a></div> 
+ <!--<a href="PortalInformation!getInformation.action?title=即时通讯工具配置说明&id=47921&categoryName=电子校务平台应用专区&channelName=关键字数据查询&fromflag=login&display=no">即时通讯</a></div>-->
+ </div>
+ 
+  <!-- 底部end -->
+  </div>
+  </form>
+</body>
+<SCRIPT LANGUAGE="JavaScript">
+//document.onkeydown=function(e){ 
+//	var theEvent = window.event || e; 
+//	var code = theEvent.keyCode || theEvent.which; 
+//	if (code == 13) {
+//		
+//	} 
+//} 
+
+//----------------wkc   20151109
+//$(document).ready(function(){
+//	////$('#leftIframe').hide();
+//	////$("#rightIframe").css("width","1000px");
+//});
+//jiangchao20161213修改原来document
+$("#go_start_pager_b").keyup(function(event){
+	switch(event.keyCode) {
+		case 13:
+		   goPager();
+		case 27:
+		   //alert("Esc");
+	}
+});
+//jiangchao20161213增加查询回车事件
+$("#searchnr").keyup(function(event){
+	switch(event.keyCode) {
+		case 13:
+		   searchIndex();
+		case 27:
+		   //alert("Esc");
+	}
+});
+window.onload = function (e) {
+    checkBrowser();
+}
+//jiangchao20161129增加查询
+function searchIndex(){
+	var searchnr=$("#searchnr").val();
+	var searchlx=$("#searchlx").val();
+	if(searchnr=="" || searchnr=="null" || searchnr==null){
+		whir_alert("请输入要查询的关键字！");
+		return false;
+	}else{
+		var channelId='179578';
+		var action="/defaultroot/PortalInformation!jldxList.action?channelId="+channelId+"&searchnr="+searchnr+"&searchlx="+searchlx;
+		document.getElementById("gjzForm2").action=action;  //赋值
+		$("#gjzForm2").submit();
+	}
+}
+function goPager(){
+    var bool = isInteger($.trim($("#go_start_pager_b").val()));
+	if(!bool){
+	   whir_alert("请输入合法的页数", function(){
+		   $("#go_start_pager_b").select();
+		   //$("#go_start_pager_b").focus();
+	   });
+	}else{
+	   var url = $("#pagerURL").val() + "&startPage=" + $.trim($("#go_start_pager_b").val());
+	   window.location.href = url;
+	}
+}
+
+function checkBrowser(){
+    if($.browser.msie){
+        var ver = $.browser.version;
+        var ie_css_style = '';
+        if(ver <= 6.0){
+            var _updateLink = "http://windows.microsoft.com/zh-cn/internet-explorer/download-ie";
+            whir_alert(comm.updateie1+'<a class="updateIE" href="'+_updateLink+'" target="_blank">'+comm.newversion+'</a>'+comm.updateie2, null);
+        }
+    }
+}
+
+//是否有效的正整数
+function isInteger(val){
+	var pattern = /^[-\+]?\d+$/;
+	return pattern.test(val);
+}
+</script>
+</html>
